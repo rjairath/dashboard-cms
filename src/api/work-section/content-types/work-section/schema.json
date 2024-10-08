@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "work_sections",
+  "info": {
+    "singularName": "work-section",
+    "pluralName": "work-sections",
+    "displayName": "WorkSection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "companyName": {
+      "type": "string",
+      "required": true
+    },
+    "designation": {
+      "type": "string",
+      "required": true
+    },
+    "skills": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::skill.skill",
+      "inversedBy": "workSection"
+    },
+    "startingDate": {
+      "type": "date"
+    },
+    "description": {
+      "type": "json"
+    }
+  }
+}
